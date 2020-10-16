@@ -2,21 +2,643 @@
 Theme Name: Wordpress Multipager
 Author: Julia Gru
 */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
 body {
-  background-color: lightgray;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0 auto;
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  display: -ms-grid;
+  display: grid;
+  margin: 0;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: 'header' 'main' 'pagination' 'footer';
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: footer;
+}
+
+.pagination {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: pagination;
 }
 
 a {
-  color: lightsalmon;
+  color: #2b2d42;
+  text-decoration: none;
 }
 
 a:visited {
-  color: darksalmon;
+  color: #5a5f8b;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Volkhov', serif;
+  font-weight: 700;
+}
+
+h4,
+h5,
+h6 {
+  font-family: 'Volkhov', serif;
+  font-weight: 400;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  text-align: justify;
+  line-height: 1.4;
 }
 
 .post {
-  max-width: 70%;
+  padding: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.post__author, .post__date {
+  font-size: 0.8em;
+  font-weight: 100;
+}
+
+.post__author {
+  font-style: italic;
+}
+
+.post1 {
+  background-color: #ffe0db;
+}
+
+.post1__text a {
+  color: #00535f;
+}
+
+.post2 {
+  background-color: #ffe3db;
+}
+
+.post2__text a {
+  color: #00495f;
+}
+
+.post3 {
+  background-color: #ffe7db;
+}
+
+.post3__text a {
+  color: #00405f;
+}
+
+.post4 {
+  background-color: #ffeadb;
+}
+
+.post4__text a {
+  color: #00365f;
+}
+
+.post5 {
+  background-color: #ffeedb;
+}
+
+.post5__text a {
+  color: #002d5f;
+}
+
+.post6 {
+  background-color: #fff2db;
+}
+
+.post6__text a {
+  color: #00235f;
+}
+
+.post7 {
+  background-color: #fff5db;
+}
+
+.post7__text a {
+  color: #001a5f;
+}
+
+.post8 {
+  background-color: #fff9db;
+}
+
+.post8__text a {
+  color: #00105f;
+}
+
+.post9 {
+  background-color: #fffcdb;
+}
+
+.post9__text a {
+  color: #00075f;
+}
+
+.post10 {
+  background-color: #feffdb;
+}
+
+.post10__text a {
+  color: #03005f;
+}
+
+.post11 {
+  background-color: #faffdb;
+}
+
+.post11__text a {
+  color: #0c005f;
+}
+
+.post12 {
+  background-color: #f7ffdb;
+}
+
+.post12__text a {
+  color: #16005f;
+}
+
+.post13 {
+  background-color: #f3ffdb;
+}
+
+.post13__text a {
+  color: #1f005f;
+}
+
+.post14 {
+  background-color: #f0ffdb;
+}
+
+.post14__text a {
+  color: #29005f;
+}
+
+.post15 {
+  background-color: #ecffdb;
+}
+
+.post15__text a {
+  color: #32005f;
+}
+
+.post16 {
+  background-color: #e8ffdb;
+}
+
+.post16__text a {
+  color: #3c005f;
+}
+
+.post17 {
+  background-color: #e5ffdb;
+}
+
+.post17__text a {
+  color: #45005f;
+}
+
+.post18 {
+  background-color: #e1ffdb;
+}
+
+.post18__text a {
+  color: #4e005f;
+}
+
+.post19 {
+  background-color: #deffdb;
+}
+
+.post19__text a {
+  color: #58005f;
+}
+
+.post20 {
+  background-color: #dbffdc;
+}
+
+.post20__text a {
+  color: #5f005c;
+}
+
+.post21 {
+  background-color: #dbffe0;
+}
+
+.post21__text a {
+  color: #5f0053;
+}
+
+.post22 {
+  background-color: #dbffe3;
+}
+
+.post22__text a {
+  color: #5f0049;
+}
+
+.post23 {
+  background-color: #dbffe7;
+}
+
+.post23__text a {
+  color: #5f0040;
+}
+
+.post24 {
+  background-color: #dbffea;
+}
+
+.post24__text a {
+  color: #5f0036;
+}
+
+.post25 {
+  background-color: #dbffee;
+}
+
+.post25__text a {
+  color: #5f002d;
+}
+
+.post26 {
+  background-color: #dbfff2;
+}
+
+.post26__text a {
+  color: #5f0023;
+}
+
+.post27 {
+  background-color: #dbfff5;
+}
+
+.post27__text a {
+  color: #5f001a;
+}
+
+.post28 {
+  background-color: #dbfff9;
+}
+
+.post28__text a {
+  color: #5f0010;
+}
+
+.post29 {
+  background-color: #dbfffc;
+}
+
+.post29__text a {
+  color: #5f0007;
+}
+
+.post30 {
+  background-color: #dbfeff;
+}
+
+.post30__text a {
+  color: #5f0300;
+}
+
+.post31 {
+  background-color: #dbfaff;
+}
+
+.post31__text a {
+  color: #5f0c00;
+}
+
+.post32 {
+  background-color: #dbf7ff;
+}
+
+.post32__text a {
+  color: #5f1600;
+}
+
+.post33 {
+  background-color: #dbf3ff;
+}
+
+.post33__text a {
+  color: #5f1f00;
+}
+
+.post34 {
+  background-color: #dbf0ff;
+}
+
+.post34__text a {
+  color: #5f2900;
+}
+
+.post35 {
+  background-color: #dbecff;
+}
+
+.post35__text a {
+  color: #5f3200;
+}
+
+.post36 {
+  background-color: #dbe8ff;
+}
+
+.post36__text a {
+  color: #5f3c00;
+}
+
+.post37 {
+  background-color: #dbe5ff;
+}
+
+.post37__text a {
+  color: #5f4500;
+}
+
+.post38 {
+  background-color: #dbe1ff;
+}
+
+.post38__text a {
+  color: #5f4e00;
+}
+
+.post39 {
+  background-color: #dbdeff;
+}
+
+.post39__text a {
+  color: #5f5800;
+}
+
+.post40 {
+  background-color: #dcdbff;
+}
+
+.post40__text a {
+  color: #5c5f00;
+}
+
+.post41 {
+  background-color: #e0dbff;
+}
+
+.post41__text a {
+  color: #535f00;
+}
+
+.post42 {
+  background-color: #e3dbff;
+}
+
+.post42__text a {
+  color: #495f00;
+}
+
+.post43 {
+  background-color: #e7dbff;
+}
+
+.post43__text a {
+  color: #405f00;
+}
+
+.post44 {
+  background-color: #eadbff;
+}
+
+.post44__text a {
+  color: #365f00;
+}
+
+.post45 {
+  background-color: #eedbff;
+}
+
+.post45__text a {
+  color: #2d5f00;
+}
+
+.post46 {
+  background-color: #f2dbff;
+}
+
+.post46__text a {
+  color: #235f00;
+}
+
+.post47 {
+  background-color: #f5dbff;
+}
+
+.post47__text a {
+  color: #1a5f00;
+}
+
+.post48 {
+  background-color: #f9dbff;
+}
+
+.post48__text a {
+  color: #105f00;
+}
+
+.post49 {
+  background-color: #fcdbff;
+}
+
+.post49__text a {
+  color: #075f00;
+}
+
+.post50 {
+  background-color: #ffdbfe;
+}
+
+.post50__text a {
+  color: #005f03;
+}
+
+.post51 {
+  background-color: #ffdbfa;
+}
+
+.post51__text a {
+  color: #005f0c;
+}
+
+.post52 {
+  background-color: #ffdbf7;
+}
+
+.post52__text a {
+  color: #005f16;
+}
+
+.post53 {
+  background-color: #ffdbf3;
+}
+
+.post53__text a {
+  color: #005f1f;
+}
+
+.post54 {
+  background-color: #ffdbf0;
+}
+
+.post54__text a {
+  color: #005f29;
+}
+
+.post55 {
+  background-color: #ffdbec;
+}
+
+.post55__text a {
+  color: #005f32;
+}
+
+.post56 {
+  background-color: #ffdbe8;
+}
+
+.post56__text a {
+  color: #005f3c;
+}
+
+.post57 {
+  background-color: #ffdbe5;
+}
+
+.post57__text a {
+  color: #005f45;
+}
+
+.post58 {
+  background-color: #ffdbe1;
+}
+
+.post58__text a {
+  color: #005f4e;
+}
+
+.post59 {
+  background-color: #ffdbde;
+}
+
+.post59__text a {
+  color: #005f58;
+}
+
+.post60 {
+  background-color: #ffdcdb;
+}
+
+.post60__text a {
+  color: #005c5f;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  row-gap: 1rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+  place-items: stretch;
+  margin: 2vh 10vw 2vh 10vw;
+  place-self: center;
+}
+
+.title-image {
+  width: 100%;
+  height: auto;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  font-family: 'Volkhov', serif;
+  font-weight: 700;
+  margin: 0;
+  height: 10vh;
+  background-color: white;
+  -webkit-box-shadow: 2px 0px 10px gray;
+          box-shadow: 2px 0px 10px gray;
+}
+
+.menu li {
+  color: #edf2f4;
+  font-size: 1.5rem;
+  margin: 0 0.6em;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.menu li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media only screen and (max-width: 825px) {
+  .menu {
+    font-size: 9px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,14 +1,10 @@
-<!-- Page layout -->
-
 <?php get_header() ?>
-
-
 
 <?php if(have_posts()): ?>
 
 <?php while(have_posts()) : the_post() ?>
 
-<div class="post">
+<div class="">
 <h1>
 
 <?php the_title() ?>
@@ -27,6 +23,5 @@
 <div class="pagination"> <?php next_posts_link('next') ?></div>
 
 <?php endif; ?>
-
 
 <?php get_footer() ?>
