@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<div class="grid-container">
+<div class="grid-container" id="test">
 	<?php if (have_posts()) : ?>
 	
         <?php while (have_posts()) : the_post() ?>
@@ -45,3 +45,4 @@
 
 
 <?php get_footer() ?>
+

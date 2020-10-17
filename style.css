@@ -17,7 +17,9 @@ html {
 body {
   background-color: white;
   font-family: 'Raleway', sans-serif;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 1.6;
   display: -ms-grid;
   display: grid;
   margin: 0;
@@ -41,6 +43,27 @@ body {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: footer;
+  position: relative;
+  bottom: 0;
+}
+
+.scroll-btn {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #8d99ae;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
 }
 
 .pagination {
@@ -79,6 +102,94 @@ p {
   line-height: 1.4;
 }
 
+ul {
+  list-style-type: circle;
+}
+
+.menu-mobile {
+  display: none;
+}
+
+.topnav {
+  position: relative;
+  height: 100%;
+  z-index: 99;
+  background-color: white;
+  -webkit-box-shadow: 2px 0px 10px gray;
+          box-shadow: 2px 0px 10px gray;
+}
+
+.topnav img {
+  margin: 0.5em;
+}
+
+#myLinks {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: -7%;
+  background-color: white;
+  padding: 0 0 2em 2em;
+  height: auto;
+}
+
+#myLinks .menu {
+  display: inline-block;
+  -webkit-box-shadow: 0px 0px 0px;
+          box-shadow: 0px 0px 0px;
+}
+
+#myLinks li {
+  color: #edf2f4;
+  font-size: 1.5rem;
+  padding: 0.6em 0.6em;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#myLinks li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  font-family: 'Volkhov', serif;
+  font-weight: 700;
+  margin: 0;
+  height: 10vh;
+  background-color: white;
+  -webkit-box-shadow: 2px 0px 10px gray;
+          box-shadow: 2px 0px 10px gray;
+}
+
+.menu li {
+  color: #edf2f4;
+  font-size: 1.5rem;
+  padding: 0 0.6em;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.menu li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.menu-mobile {
+  background-color: white;
+}
+
 .post {
   padding: 1.5em;
   display: -webkit-box;
@@ -100,6 +211,19 @@ p {
 
 .post__author {
   font-style: italic;
+}
+
+.post img {
+  width: 100%;
+}
+
+.single {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .post1 {
@@ -603,42 +727,33 @@ p {
   height: auto;
 }
 
-.menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  list-style: none;
-  font-family: 'Volkhov', serif;
-  font-weight: 700;
-  margin: 0;
-  height: 10vh;
-  background-color: white;
-  -webkit-box-shadow: 2px 0px 10px gray;
-          box-shadow: 2px 0px 10px gray;
+blockquote {
+  background-color: #8d99ae;
+  padding: 2em;
+  font-style: italic;
 }
 
-.menu li {
-  color: #edf2f4;
-  font-size: 1.5rem;
-  margin: 0 0.6em;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-.menu li:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+blockquote > p::before,
+blockquote > p::after {
+  content: '"';
 }
 
 @media only screen and (max-width: 825px) {
-  .menu {
-    font-size: 9px;
+  .menu-mobile {
+    display: block;
+  }
+  .menu-desktop {
+    display: none;
+  }
+  blockquote {
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+    -webkit-margin-after: 0em;
+            margin-block-end: 0em;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+            margin-inline-end: 0px;
   }
 }
 /*# sourceMappingURL=style.css.map */
